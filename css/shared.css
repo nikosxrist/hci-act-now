@@ -1,0 +1,120 @@
+:root {
+  --bg-outer: #020617;
+  --bg-dark: #0f172a;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --danger: #ef4444;
+  --danger-dark: #991b1b;
+  --warning: #f59e0b;
+  --safe: #22c55e;
+  --safe-text: #052e16;
+  --primary: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: var(--bg-outer);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Mobile Viewport Container (390x844) */
+.phone-frame {
+  width: 100%;
+  max-width: 390px;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--card-border);
+  border-right: 1px solid var(--card-border);
+}
+
+.screen-content {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Cards & High-Contrast Containers */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+/* Fitts's Law: Large >= 58px Touch Targets for High-Stress Usage */
+.btn-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 58px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.btn-large:active {
+  transform: scale(0.98);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+.btn-safe {
+  background: var(--safe);
+  color: var(--safe-text);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Shared Bottom Navigation Bar */
+.bottom-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--card-bg);
+  border-top: 2px solid var(--card-border);
+}
+
+.bottom-nav a {
+  padding: 16px 8px;
+  text-align: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-top: 3px solid transparent;
+}
+
+.bottom-nav a.active {
+  background: #334155;
+  color: #ffffff;
+  border-top: 3px solid var(--danger);
+}
